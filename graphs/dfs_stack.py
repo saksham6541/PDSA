@@ -16,6 +16,7 @@ def dfs(start,graph): # performing DFS using Stack
         
         for neighbour in reversed(graph[node]): # iterating over the neighbour of node in the reversed order and appending in the stack 
             if not visited[neighbour]:
+                visited[neighbour]=True
                 stack.append(neighbour) # appending unvisited neighbour in the stack 
                 
 n = 5
