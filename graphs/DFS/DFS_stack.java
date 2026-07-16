@@ -1,7 +1,7 @@
 import java.util.*;
+
 public class DFS_stack {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         int V = 5;
 
         ArrayList<ArrayList<Integer>> graph = new ArrayList<>();
@@ -26,29 +26,25 @@ public class DFS_stack {
 
         dfs(0, graph);
     }
-    static void dfs(int start, ArrayList<ArrayList<Integer>> graph)
-    {
+
+    static void dfs(int start, ArrayList<ArrayList<Integer>> graph) {
         boolean[] visited = new boolean[graph.size()];
         Stack<Integer> stack = new Stack<>();
-        
+
         stack.push(start);
 
-        while(!stack.isEmpty())
-        {
+        while (!stack.isEmpty()) {
             int node = stack.pop();
 
-            if(!visited[node])
-            {
-                visited[node]=true;
-                System.out.print(node+" ");
+            if (!visited[node]) {
+                visited[node] = true;
+                System.out.print(node + " ");
             }
 
-            for(int i = graph.get(node).size()-1 ; i>=0;i--)
-            {
+            for (int i = graph.get(node).size() - 1; i >= 0; i--) {
                 int neighbour = graph.get(node).get(i);
 
-                if(!visited[neighbour])
-                {
+                if (!visited[neighbour]) {
                     stack.push(neighbour);
                 }
             }
